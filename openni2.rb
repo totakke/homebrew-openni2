@@ -1,6 +1,5 @@
-# -*- coding: undecided -*-
 #
-#   homebrew-openni
+#   homebrew-openni2
 #   https://github.com/totakke/homebrew-openni2
 #   Copyright (C) 2013, Toshiki TAKEUCHI.
 #
