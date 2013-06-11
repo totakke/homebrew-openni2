@@ -1,8 +1,8 @@
 # homebrew-openni2
 
-homebrew-openni2 is a project for installing [OpenNI2](http://openni.org/) with [Homebrew](http://mxcl.github.com/homebrew/).
+homebrew-openni2 is a project for installing [OpenNI2][openni2] with [Homebrew][homebrew].
 
-If you want to use OpenNI (not 2), refer to [homebrew-openni](https://github.com/totakke/homebrew-openni).
+If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 
 ## Version
 
@@ -32,9 +32,9 @@ Connect a device to the PC and run NiViewer.
 
 ## License
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.
+Code is under the [BSD 2 Clause (NetBSD) license][license].
 
-You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and limitations under the License.
+[openni2]:http://openni.org/
+[homebrew]:http://mxcl.github.com/homebrew/
+[homebrew-openni]:https://github.com/totakke/homebrew-openni
+[license]:https://github.com/totakke/homebrew-openni2/blob/master/LICENSE
