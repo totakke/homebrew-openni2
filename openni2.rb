@@ -8,6 +8,12 @@ class Openni2 < Formula
 
   head 'https://github.com/OpenNI/OpenNI2.git'
 
+  devel do
+    url 'https://github.com/OpenNI/OpenNI2.git', :branch => 'develop', :revision => '333a0cb042d5dc168cb31aa4805149e4368968f3'
+    version '2.2.0.30-Alpha'
+    sha1 '333a0cb042d5dc168cb31aa4805149e4368968f3'
+  end
+
   depends_on :python
   depends_on 'libusb'
   depends_on 'doxygen' => :build
@@ -17,11 +23,17 @@ class Openni2 < Formula
   def install
     ENV.universal_binary if build.universal?
 
+    if build.devel?
+      inreplace 'Source/Drivers/PS1080/Makefile', 'CFLAGS += -Wall', ''
+      inreplace 'Source/Drivers/PSLink/Makefile', 'CFLAGS += -Wall', ''
+      inreplace 'Source/Drivers/PSLink/PSLinkConsole/Makefile', 'CFLAGS += -Wall', ''
+    end
+
     # Build
     system 'make'
-    cd 'Redist'
+    cd (build.devel? ? 'Packaging' : 'Redist')
     system python, 'ReleaseVersion.py', 'x64'
-    cd Dir.glob('OpenNI-2*-x64')[0]
+    cd Dir.glob('OpenNI-*')[0]
 
     # Install libs
     mkpath "#{lib}/ni2"
