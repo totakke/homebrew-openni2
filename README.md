@@ -19,6 +19,12 @@ If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 
     $ brew install openni2
 
+<!--
+If you want to use Kinect for Xbox360, install `openni2-freenectdriver` additionally.
+
+    $ brew install openni2-freenectdriver
+-->
+
 ### 3. Run NiViewer for test
 
 Connect a device to the PC and run NiViewer.
@@ -32,7 +38,7 @@ Connect a device to the PC and run NiViewer.
 
 ## License
 
-Code is under the [BSD 2 Clause (NetBSD) license][license].
+Code is under the [BSD 2 Clause (NetBSD) license][license], the same as Homebrew.
 
 [openni2]:http://openni.org/
 [homebrew]:http://mxcl.github.com/homebrew/

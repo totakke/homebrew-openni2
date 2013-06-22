@@ -26,7 +26,6 @@ class Openni2 < Formula
     # Install libs
     mkpath "#{lib}/ni2"
     cp_r Dir['Redist/*'], "#{lib}/ni2"
-    lib.install Dir['Redist/*']
 
     # Install includes
     mkpath "#{include}/ni2"
