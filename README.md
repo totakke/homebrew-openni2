@@ -7,7 +7,7 @@ If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 ## Version
 
 * OpenNI2
-    * 2.1-Beta
+    * 2.2-Beta
 
 ## Usage
 
@@ -29,7 +29,7 @@ If you want to use Kinect for Xbox360, install `openni2-freenectdriver` addition
 
 Connect a device to the PC and run NiViewer.
 
-    $ cd `brew --cellar openni2`/2.1-Beta/tools
+    $ cd `brew --cellar openni2`/2.2-Beta/tools
     $ ./NiViewer
 
 ### 4. Uninstall

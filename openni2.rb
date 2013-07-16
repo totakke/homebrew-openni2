@@ -2,17 +2,11 @@ require 'formula'
 
 class Openni2 < Formula
   homepage 'http://www.openni.org/'
-  url 'https://github.com/OpenNI/OpenNI2/archive/2.1-Beta.tar.gz'
-  version '2.1-Beta'
-  sha1 '4059850b433f8557635a900f32e8d6f74299ebd3'
+  url 'https://github.com/OpenNI/OpenNI2.git', :branch => 'master', :revision => 'b9527e91e51fb2333ccfdbcc4a2d3b5f213c2c08'
+  version '2.2-Beta'
+  sha1 'b9527e91e51fb2333ccfdbcc4a2d3b5f213c2c08'
 
   head 'https://github.com/OpenNI/OpenNI2.git'
-
-  devel do
-    url 'https://github.com/OpenNI/OpenNI2.git', :branch => 'develop', :revision => '333a0cb042d5dc168cb31aa4805149e4368968f3'
-    version '2.2.0.30-Alpha'
-    sha1 '333a0cb042d5dc168cb31aa4805149e4368968f3'
-  end
 
   depends_on :python
   depends_on 'libusb'
@@ -23,15 +17,9 @@ class Openni2 < Formula
   def install
     ENV.universal_binary if build.universal?
 
-    if build.devel?
-      inreplace 'Source/Drivers/PS1080/Makefile', 'CFLAGS += -Wall', ''
-      inreplace 'Source/Drivers/PSLink/Makefile', 'CFLAGS += -Wall', ''
-      inreplace 'Source/Drivers/PSLink/PSLinkConsole/Makefile', 'CFLAGS += -Wall', ''
-    end
-
     # Build
     system 'make'
-    cd (build.devel? ? 'Packaging' : 'Redist')
+    cd 'Packaging'
     system python, 'ReleaseVersion.py', 'x64'
     cd Dir.glob('OpenNI-*')[0]
 
