@@ -45,8 +45,12 @@ class Openni2 < Formula
   end
 
   def caveats; <<-EOS.undent
-    OPENNI2_INCLUDE=#{HOMEBREW_PREFIX}/include/ni2
-    OPENNI2_REDIST=#{HOMEBREW_PREFIX}/lib/ni2
+    Add the recommended variables to your dotfiles.
+     * On Bash, add them to `~/.bash_profile`.
+     * On Zsh, add them to `~/.zprofile` instead.
+
+    export OPENNI2_INCLUDE=#{HOMEBREW_PREFIX}/include/ni2
+    export OPENNI2_REDIST=#{HOMEBREW_PREFIX}/lib/ni2
     EOS
   end
 end
