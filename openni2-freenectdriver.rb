@@ -2,9 +2,9 @@ require 'formula'
 
 class Openni2Freenectdriver < Formula
   homepage 'https://github.com/piedar/OpenNI2-FreenectDriver'
-  url 'https://github.com/piedar/OpenNI2-FreenectDriver.git', :revision => '8ca95ba277371bcc4f6081a199d841e66a7a1cb8'
-  version '8ca95ba277'
-  sha1 '8ca95ba277371bcc4f6081a199d841e66a7a1cb8'
+  url 'https://github.com/piedar/OpenNI2-FreenectDriver.git', :revision => 'c1458aebf1df501dc6606f3472d52e357de987c1'
+  version 'c1458aebf1'
+  sha1 'c1458aebf1df501dc6606f3472d52e357de987c1'
 
   head 'https://github.com/piedar/OpenNI2-FreenectDriver.git'
 

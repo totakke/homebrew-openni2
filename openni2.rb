@@ -2,9 +2,9 @@ require 'formula'
 
 class Openni2 < Formula
   homepage 'http://www.openni.org/'
-  url 'https://github.com/OpenNI/OpenNI2.git', :branch => 'master', :revision => 'b9527e91e51fb2333ccfdbcc4a2d3b5f213c2c08'
-  version '2.2-Beta'
-  sha1 'b9527e91e51fb2333ccfdbcc4a2d3b5f213c2c08'
+  url 'https://github.com/OpenNI/OpenNI2.git', :revision => '5b88c95e4f8d19b95713e3c873c7d07e48e5605b'
+  version '2.2.0.30'
+  sha1 '5b88c95e4f8d19b95713e3c873c7d07e48e5605b'
 
   head 'https://github.com/OpenNI/OpenNI2.git'
 
