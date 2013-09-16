@@ -12,18 +12,17 @@ class Openni2 < Formula
   depends_on 'libusb'
   depends_on 'doxygen' => :build
 
-  option :universal
-
   def install
-    ENV.universal_binary if build.universal?
+    # Universal build
+    ENV.universal_binary
 
     # Build
-    system 'make'
-    cd 'Packaging'
-    system python, 'ReleaseVersion.py', 'x64'
-    cd Dir.glob('OpenNI-*')[0]
+    system 'make', 'all', 'doc'
+    mkdir 'out'
+    system python, 'Packaging/Harvest.py', 'out', 'x64'
 
     # Install libs
+    cd 'out'
     mkpath "#{lib}/ni2"
     cp_r Dir['Redist/*'], "#{lib}/ni2"
 
@@ -36,7 +35,7 @@ class Openni2 < Formula
     cp_r Dir['Tools/*'], "#{prefix}/tools"
 
     # Install samples
-    sample_dir = "#{prefix}/sample"
+    sample_dir = "#{prefix}/samples"
     mkpath sample_dir
     cp_r Dir['Samples/*'], sample_dir
 
