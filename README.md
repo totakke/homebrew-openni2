@@ -20,12 +20,22 @@ If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 
 ### 2. Install
 
+Install OpenNI2 by the following command.
+
     $ brew install openni2
 
 If you want to use Kinect for Xbox360, install `openni2-freenectdriver` additionally.
+It must be installed after installation of OpenNI2 is finished.
 
     $ brew install openni2-freenectdriver
 
+Add the recommended variables to your dotfile (`.bash_profile`, `.zprofile`, etc.).
+
+    export OPENNI2_INCLUDE=/usr/local/include/ni2
+    export OPENNI2_REDIST=/usr/local/lib/ni2
+
+Above paths are for default environment.
+Check correct paths for your environment by `brew info openni2`.
 
 ### 3. Run NiViewer for test
 
