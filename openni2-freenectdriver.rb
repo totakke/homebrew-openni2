@@ -12,6 +12,10 @@ class Openni2Freenectdriver < Formula
   depends_on :python
   depends_on 'libfreenect'
 
+  def patches
+    DATA
+  end
+
   def install
     system python, 'waf', 'configure', 'build'
 
@@ -25,3 +29,18 @@ class Openni2Freenectdriver < Formula
     ln_s src, openni2_cellar + '/samples/Bin/OpenNI2/Drivers/' + driver, :force => true
   end
 end
+
+__END__
+diff --git a/wscript b/wscript
+index 6f5e994..f4a8737 100644
+--- a/wscript
++++ b/wscript
+@@ -28,7 +28,7 @@ def build(bld):
+ 		name = APPNAME,
+ 		vnum = VERSION,
+ 		install_path = None,
+-		includes = ['extern/OpenNI-Linux-x64-2.2/Include', '/usr/include/libfreenect', '/usr/local/include/libfreenect'],
++		includes = ['/usr/local/include/ni2', '/usr/include/libfreenect', '/usr/local/include/libfreenect'],
+ 		source = bld.path.ant_glob('src/*.cpp'),
+
+ 		use = 'freenect',
