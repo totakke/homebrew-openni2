@@ -9,7 +9,7 @@ class Openni2 < Formula
   head 'https://github.com/OpenNI/OpenNI2.git'
 
   depends_on :python
-  depends_on 'libusb'
+  depends_on 'libusb' => 'universal'
   depends_on 'doxygen' => :build
 
   def install
