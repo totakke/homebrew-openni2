@@ -16,6 +16,9 @@ class Openni2 < Formula
     # Universal build
     ENV.universal_binary
 
+    # stdlib of clang changed since mavericks
+    ENV.cxx += ' -stdlib=libstdc++' if ENV.compiler == :clang && MacOS.version >= :mavericks
+
     # Build
     system 'make', 'all', 'doc'
     mkdir 'out'
