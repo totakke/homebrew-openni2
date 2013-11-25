@@ -8,9 +8,9 @@ If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 ## Version
 
 * OpenNI2
-    * 2.2.0.30
+    * 2.2.0.33
 * OpenNI2-FreenectDriver
-    * c1458aebf1
+    * 1.2.1
 
 ## Usage
 
@@ -41,7 +41,7 @@ Check correct paths for your environment by `brew info openni2`.
 
 Connect a device to the PC and run NiViewer.
 
-    $ cd `brew --cellar openni2`/2.2.0.30/tools
+    $ cd `brew --cellar openni2`/2.2.0.33/tools
     $ ./NiViewer
 
 ### 4. Uninstall
