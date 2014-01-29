@@ -11,10 +11,16 @@ class Openni2Freenectdriver < Formula
   depends_on 'openni2'
   depends_on :python
   depends_on 'libfreenect'
+  
+  option :universal
 
   def install
     inreplace 'wscript', 'extern/OpenNI-Linux-x64-2.2.0.33/Include', "#{HOMEBREW_PREFIX}/include/ni2"
     inreplace 'wscript', '/usr/local/include/libfreenect', "#{HOMEBREW_PREFIX}/include/libfreenect"
+
+    if build.universal?
+        inreplace 'wscript', "conf.env.CXXFLAGS = ['-O2'] #+ strict", "conf.env.CXXFLAGS = ['-O2'] #+ strict\n\tconf.env.append_value('CXXFLAGS', ['-arch', 'i386'])\n\tconf.env.append_value('CXXFLAGS', ['-arch', 'x86_64'])\n\tconf.env.append_value('LINKFLAGS', ['-arch', 'i386'])\n\tconf.env.append_value('LINKFLAGS', ['-arch', 'x86_64'])"
+    end
 
     system python, 'waf', 'configure', 'build'
 
