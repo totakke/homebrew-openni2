@@ -2,16 +2,15 @@ require 'formula'
 
 class Openni2Freenectdriver < Formula
   homepage 'https://github.com/piedar/OpenNI2-FreenectDriver'
-  url 'https://github.com/piedar/OpenNI2-FreenectDriver.git', :revision => 'd18720c8c9ef14b3a1603ccf4416c266c36c4ed1'
+  url 'https://github.com/piedar/OpenNI2-FreenectDriver.git', :revision => 'ee732fd66f83300cad6cfc71b4dcfc2427024b98'
   version '1.2.1'
-  sha1 'd18720c8c9ef14b3a1603ccf4416c266c36c4ed1'
-
+  sha1 'ee732fd66f83300cad6cfc71b4dcfc2427024b98'
   head 'https://github.com/piedar/OpenNI2-FreenectDriver.git'
 
   depends_on 'openni2'
   depends_on :python
   depends_on 'libfreenect'
-  
+
   option :universal
 
   def install
