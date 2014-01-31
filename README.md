@@ -41,7 +41,7 @@ Check correct paths for your environment by `brew info openni2`.
 
 Connect a device to the PC and run NiViewer.
 
-    $ cd `brew --cellar openni2`/2.2.0.33/tools
+    $ cd `brew --prefix`/share/openni2/tools
     $ ./NiViewer
 
 ### 4. Uninstall
