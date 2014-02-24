@@ -21,7 +21,8 @@ class Openni2 < Formula
 
     system 'make', 'all', 'doc'
     mkdir 'out'
-    system 'python', 'Packaging/Harvest.py', 'out', 'x64'
+    arch = (MacOS.version <= :leopard && !build.universal?) ? 'x86' :'x64'
+    system 'python', 'Packaging/Harvest.py', 'out', arch
 
     cd 'out'
 
