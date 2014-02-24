@@ -14,7 +14,7 @@ If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 
 ## Usage
 
-### 1. Download formula
+### 1. Download formulae
 
     $ brew tap totakke/openni2
 
