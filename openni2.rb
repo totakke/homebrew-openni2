@@ -1,11 +1,11 @@
 require 'formula'
 
 class Openni2 < Formula
-  homepage 'http://www.openni.org/'
-  url 'https://github.com/OpenNI/OpenNI2/archive/2.2-beta2.tar.gz'
+  homepage 'http://structure.io/openni'
+  url 'https://github.com/occipital/OpenNI2/archive/2.2-beta2.tar.gz'
   version '2.2.0.33'
   sha1 '8c9a57de7224cd0a0a4c4bb03a7637bd179df34c'
-  head 'https://github.com/OpenNI/OpenNI2.git'
+  head 'https://github.com/occipital/OpenNI2.git'
 
   option :universal
 

@@ -52,8 +52,8 @@ Connect a device to the PC and run NiViewer.
 
 Code is under the [BSD 2 Clause (NetBSD) license][license], the same as Homebrew.
 
-[openni2]:http://openni.org/
+[openni2]:http://structure.io/openni
 [homebrew]:http://mxcl.github.com/homebrew/
-[openni2-freenectdriver]:https://github.com/piedar/OpenNI2-FreenectDriver
+[openni2-freenectdriver]:https://github.com/OpenKinect/libfreenect
 [homebrew-openni]:https://github.com/totakke/homebrew-openni
 [license]:https://github.com/totakke/homebrew-openni2/blob/master/LICENSE
