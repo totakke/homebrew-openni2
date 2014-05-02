@@ -8,10 +8,18 @@ class Openni2 < Formula
   head 'https://github.com/occipital/OpenNI2.git'
 
   option :universal
+  option 'with-docs', 'Build documentation using javadoc (might fail with Java 1.8)'
 
   depends_on :python
   depends_on 'libusb' => (build.universal?) ? ['universal'] : []
   depends_on 'doxygen' => :build
+
+
+  def patches
+    # disables javadoc documentation build by default because of errors with Java 8. 
+    DATA if !build.with? 'docs'
+  end
+
 
   def install
     ENV.universal_binary if build.universal?
@@ -19,7 +27,8 @@ class Openni2 < Formula
     # stdlib of clang changed since mavericks
     ENV.cxx += ' -stdlib=libstdc++' if ENV.compiler == :clang && MacOS.version >= :mavericks
 
-    system 'make', 'all', 'doc'
+    system 'make', 'all' 
+    system 'make', 'doc' if build.with? 'docs' 
     mkdir 'out'
     arch = (MacOS.version <= :leopard && !build.universal?) ? 'x86' :'x64'
     system 'python', 'Packaging/Harvest.py', 'out', arch
@@ -43,3 +52,19 @@ class Openni2 < Formula
     EOS
   end
 end
+
+__END__
+diff --git a/Packaging/Harvest.py b/Packaging/Harvest.py
+index 4ce9ed2..fad7017 100755
+--- a/Packaging/Harvest.py
++++ b/Packaging/Harvest.py
+@@ -312,7 +312,7 @@ $(OUTPUT_FILE): copy-redist
+         
+         # Documentation
+         docDir = os.path.join(self.outDir, 'Documentation')
+-        self.copyDocumentation(docDir)
++        #self.copyDocumentation(docDir)
+         
+         # Include
+         shutil.copytree(os.path.join(rootDir, 'Include'), os.path.join(self.outDir, 'Include'))
+
