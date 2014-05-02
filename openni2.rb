@@ -12,14 +12,12 @@ class Openni2 < Formula
 
   depends_on :python
   depends_on 'libusb' => (build.universal?) ? ['universal'] : []
-  depends_on 'doxygen' => :build
-
+  depends_on 'doxygen' => :build if build.with? 'docs'
 
   def patches
-    # disables javadoc documentation build by default because of errors with Java 8. 
-    DATA if !build.with? 'docs'
+    # disables javadoc documentation build by default because of errors with Java 8.
+    DATA if build.without? 'docs'
   end
-
 
   def install
     ENV.universal_binary if build.universal?
@@ -27,8 +25,8 @@ class Openni2 < Formula
     # stdlib of clang changed since mavericks
     ENV.cxx += ' -stdlib=libstdc++' if ENV.compiler == :clang && MacOS.version >= :mavericks
 
-    system 'make', 'all' 
-    system 'make', 'doc' if build.with? 'docs' 
+    system 'make', 'all'
+    system 'make', 'doc' if build.with? 'docs'
     mkdir 'out'
     arch = (MacOS.version <= :leopard && !build.universal?) ? 'x86' :'x64'
     system 'python', 'Packaging/Harvest.py', 'out', arch
@@ -39,7 +37,7 @@ class Openni2 < Formula
     (include+'ni2').install Dir['Include/*']
     (share+'openni2/tools').install Dir['Tools/*']
     (share+'openni2/samples').install Dir['Samples/*']
-    doc.install Dir['Documentation']
+    doc.install Dir['Documentation'] if build.with? 'docs'
   end
 
   def caveats; <<-EOS.undent
@@ -67,4 +65,3 @@ index 4ce9ed2..fad7017 100755
          
          # Include
          shutil.copytree(os.path.join(rootDir, 'Include'), os.path.join(self.outDir, 'Include'))
-
