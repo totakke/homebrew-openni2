@@ -1,21 +1,26 @@
 # homebrew-openni2
 
-homebrew-openni2 is a project for installing [OpenNI2][openni2] with [Homebrew][homebrew].
-This project additionally includes a formula of [OpenNI2-FreenectDriver][openni2-freenectdriver] for Kinect for Xbox360.
+homebrew-openni2 is a project for installing [OpenNI2][openni2] related modules with [Homebrew][homebrew]: [OpenNI2-FreenectDriver][openni2-freenectdriver] for Kinect for Xbox360.
 
 If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 
+## NOTICE
+
+OpenNI2 formula is now provided by [homebrew-science][homebrew-science], so homebrew-openni2 won't provide it.
+homebrew-openni2 is supporting OpenNI2-FreenectDriver formula.
+
 ## Version
 
-* OpenNI2
-    * 2.2.0.33
 * OpenNI2-FreenectDriver
-    * 1.2.1
+    * 0.4.1
 
 ## Usage
 
 ### 1. Download formulae
 
+First, tap homebrew-science and homebrew-openni2.
+
+    $ brew tap homebrew/science
     $ brew tap totakke/openni2
 
 ### 2. Install
@@ -54,6 +59,7 @@ Code is under the [BSD 2 Clause (NetBSD) license][license], the same as Homebrew
 
 [openni2]:http://structure.io/openni
 [homebrew]:http://mxcl.github.com/homebrew/
+[homebrew-science]:https://github.com/Homebrew/homebrew-science
 [openni2-freenectdriver]:https://github.com/OpenKinect/libfreenect
 [homebrew-openni]:https://github.com/totakke/homebrew-openni
 [license]:https://github.com/totakke/homebrew-openni2/blob/master/LICENSE
