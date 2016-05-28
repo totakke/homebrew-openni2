@@ -2,7 +2,7 @@ class Openni2Freenectdriver < Formula
   desc "Bridge to libfreenect implemented as an OpenNI2 driver"
   homepage 'https://github.com/OpenKinect/libfreenect'
   url 'https://github.com/OpenKinect/libfreenect/archive/v0.4.1.tar.gz'
-  sha1 'a72bf3d60a859fb5b54b30d6e5d52c8359c07888'
+  sha256 "7426bcef9605f6cd4914f964cec84b509077066e47e087ccc4dd4463c90c8931"
   head 'https://github.com/OpenKinect/libfreenect.git'
 
   option :universal
