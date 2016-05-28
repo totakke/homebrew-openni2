@@ -1,5 +1,3 @@
-require 'formula'
-
 class Openni2Freenectdriver < Formula
   homepage 'https://github.com/OpenKinect/libfreenect'
   url 'https://github.com/OpenKinect/libfreenect/archive/v0.4.1.tar.gz'
