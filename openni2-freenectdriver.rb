@@ -36,6 +36,5 @@ class Openni2Freenectdriver < Formula
     openni2_cellar = Dir.glob("#{HOMEBREW_PREFIX}/Cellar/openni2/*")[0]
     ln_s src, openni2_cellar + "/lib/ni2/OpenNI2/Drivers/libFreenectDriver.dylib", :force => true
     ln_s src, openni2_cellar + "/share/openni2/tools/OpenNI2/Drivers/libFreenectDriver.dylib", :force => true
-    ln_s src, openni2_cellar + "/share/openni2/samples/Bin/OpenNI2/Drivers/libFreenectDriver.dylib", :force => true
   end
 end
