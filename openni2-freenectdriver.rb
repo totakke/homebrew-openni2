@@ -31,10 +31,12 @@ class Openni2Freenectdriver < Formula
       driver = File.readlink(driver)
     end
     prefix.install driver
+  end
 
-    src = "#{prefix}/" + driver
-    openni2_cellar = Dir.glob("#{HOMEBREW_PREFIX}/Cellar/openni2/*")[0]
-    ln_s src, openni2_cellar + "/lib/ni2/OpenNI2/Drivers/libFreenectDriver.dylib", :force => true
-    ln_s src, openni2_cellar + "/share/openni2/tools/OpenNI2/Drivers/libFreenectDriver.dylib", :force => true
+  def caveats; <<~EOS
+    You have to link the driver manually.
+      ln -s `brew --cellar openni2-freenectdriver`/[version]/libFreenectDriver.[version].dylib `brew --cellar openni2`/[version]/lib/ni2/OpenNI2/Drivers
+      ln -s `brew --cellar openni2-freenectdriver`/[version]/libFreenectDriver.[version].dylib `brew --cellar openni2`/[version]/share/openni2/tools/OpenNI2/Drivers
+    EOS
   end
 end
