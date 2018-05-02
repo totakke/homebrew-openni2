@@ -8,7 +8,7 @@ class Openni2Freenectdriver < Formula
   option :universal
 
   depends_on "cmake" => :build
-  depends_on "homebrew/science/openni2" => build.universal? ? ["universal"] : []
+  depends_on "brewsci/science/openni2" => build.universal? ? ["universal"] : []
 
   def install
     inreplace "OpenNI2-FreenectDriver/CmakeLists.txt",

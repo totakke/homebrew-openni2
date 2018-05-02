@@ -6,7 +6,7 @@ If you want to use OpenNI (not 2), refer to [homebrew-openni][homebrew-openni].
 
 ## NOTICE
 
-OpenNI2 formula is now provided by [homebrew-science][homebrew-science], so homebrew-openni2 won't provide it.
+OpenNI2 formula is now provided by [brewsci/science](https://github.com/brewsci/homebrew-science), so homebrew-openni2 won't provide it.
 homebrew-openni2 is supporting OpenNI2-FreenectDriver formula.
 
 ## Version
@@ -20,7 +20,7 @@ homebrew-openni2 is supporting OpenNI2-FreenectDriver formula.
 
 First, tap homebrew-science and homebrew-openni2.
 
-    $ brew tap homebrew/science
+    $ brew tap brewsci/science
     $ brew tap totakke/openni2
 
 ### 2. Install
@@ -59,7 +59,6 @@ Code is under the [BSD 2 Clause (NetBSD) license][license], the same as Homebrew
 
 [openni2]:http://structure.io/openni
 [homebrew]:http://mxcl.github.com/homebrew/
-[homebrew-science]:https://github.com/Homebrew/homebrew-science
 [openni2-freenectdriver]:https://github.com/OpenKinect/libfreenect
 [homebrew-openni]:https://github.com/totakke/homebrew-openni
 [license]:https://github.com/totakke/homebrew-openni2/blob/master/LICENSE
